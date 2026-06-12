@@ -132,35 +132,60 @@ const REPORT_DATA = [
   {
     "date": "2026-06-12",
     "summary": {
-      "hotIndustries": ["半導體/ASIC設計", "AI基礎設施", "AI應用開發", "AI PC供應鏈", "ESG科技"],
-      "decliningIndustries": ["傳統軟體業（初階）", "傳統製造業", "白領管理職"],
+      "hotIndustries": [
+        "AI基礎設施/資料中心",
+        "半導體/先進封裝",
+        "AI邊緣運算/IoT",
+        "AI顧問服務",
+        "永續科技/ESG"
+      ],
+      "decliningIndustries": [
+        "傳統軟體業（初階CRUD）",
+        "白領中層管理職",
+        "傳統客服/文書"
+      ],
       "aiHighImpactCount": 4
     },
     "hotJobs": [
       {
         "rank": 1,
-        "title": "AI/LLM 工程師",
+        "title": "AI/LLM 工程師（Agent架構）",
         "industry": "科技/AI",
         "salaryRange": "TWD 76K-120K/月",
-        "keySkills": ["LangChain", "RAG", "PyTorch", "LLM微調"],
+        "keySkills": [
+          "LangChain",
+          "RAG",
+          "PyTorch",
+          "Agent架構"
+        ],
         "aiImpact": "low",
         "trend": "up"
       },
       {
         "rank": 2,
-        "title": "IC 設計工程師（數位/類比跨界）",
+        "title": "IC 設計工程師（類比/數位跨界）",
         "industry": "半導體",
         "salaryRange": "TWD 120K-171K/月",
-        "keySkills": ["EDA工具", "ASIC設計", "NVLink整合", "AI加速"],
+        "keySkills": [
+          "EDA工具",
+          "ASIC設計",
+          "NVLink整合",
+          "AI加速器"
+        ],
         "aiImpact": "low",
         "trend": "up"
       },
       {
         "rank": 3,
-        "title": "前線部署工程師（AI Field Deployment）",
+        "title": "AI前線部署工程師",
         "industry": "AI硬體/資料中心",
         "salaryRange": "TWD 60K-95K/月",
-        "keySkills": ["系統整合", "AI伺服器部署", "Linux", "硬體除錯"],
+        "keySkills": [
+          "系統整合",
+          "AI伺服器部署",
+          "Linux",
+          "硬體除錯"
+        ],
         "aiImpact": "low",
         "trend": "up"
       },
@@ -168,17 +193,27 @@ const REPORT_DATA = [
         "rank": 4,
         "title": "資料科學家 / ML工程師",
         "industry": "科技/AI",
-        "salaryRange": "TWD 80K-122K/月",
-        "keySkills": ["Python", "機器學習", "統計建模", "SQL"],
+        "salaryRange": "TWD 80K-128K/月",
+        "keySkills": [
+          "Python",
+          "機器學習",
+          "統計建模",
+          "SQL"
+        ],
         "aiImpact": "medium",
         "trend": "up"
       },
       {
         "rank": 5,
-        "title": "AI 顧問／策略師",
+        "title": "AI顧問 / 數位轉型策略師",
         "industry": "顧問/企業服務",
         "salaryRange": "TWD 90K-150K/月",
-        "keySkills": ["AI轉型策略", "商業分析", "利害關係人溝通", "專案管理"],
+        "keySkills": [
+          "AI轉型策略",
+          "商業分析",
+          "利害關係人溝通",
+          "專案管理"
+        ],
         "aiImpact": "low",
         "trend": "up"
       },
@@ -187,25 +222,40 @@ const REPORT_DATA = [
         "title": "先進封裝工程師（CoWoS/HBM）",
         "industry": "半導體",
         "salaryRange": "TWD 80K-130K/月",
-        "keySkills": ["CoWoS封裝", "HBM記憶體", "良率提升", "散熱設計"],
+        "keySkills": [
+          "CoWoS封裝",
+          "HBM記憶體",
+          "良率優化",
+          "液冷系統"
+        ],
         "aiImpact": "low",
         "trend": "up"
       },
       {
         "rank": 7,
-        "title": "AI邊緣運算工程師",
+        "title": "AI邊緣/神經型態晶片工程師",
         "industry": "IoT/智慧製造",
         "salaryRange": "TWD 70K-110K/月",
-        "keySkills": ["邊緣AI推論", "神經型態晶片", "TinyML", "嵌入式系統"],
+        "keySkills": [
+          "邊緣AI推論",
+          "神經型態晶片",
+          "TinyML",
+          "嵌入式系統"
+        ],
         "aiImpact": "low",
         "trend": "up"
       },
       {
         "rank": 8,
-        "title": "ESG 永續數據分析師",
+        "title": "ESG永續數據分析師",
         "industry": "科技/半導體",
-        "salaryRange": "TWD 55K-80K/月",
-        "keySkills": ["ESG報告", "碳盤查", "AI數據分析", "法規遵循"],
+        "salaryRange": "TWD 55K-85K/月",
+        "keySkills": [
+          "ESG報告",
+          "碳盤查",
+          "AI數據分析",
+          "法規遵循"
+        ],
         "aiImpact": "medium",
         "trend": "up"
       },
@@ -214,7 +264,302 @@ const REPORT_DATA = [
         "title": "MLOps / AI平台工程師",
         "industry": "科技/雲端",
         "salaryRange": "TWD 70K-115K/月",
-        "keySkills": ["Kubernetes", "MLflow", "CI/CD", "模型監控"],
+        "keySkills": [
+          "Kubernetes",
+          "MLflow",
+          "CI/CD",
+          "模型監控"
+        ],
+        "aiImpact": "medium",
+        "trend": "stable"
+      },
+      {
+        "rank": 10,
+        "title": "AI數據治理師 / 訓練資料品控師",
+        "industry": "AI服務",
+        "salaryRange": "TWD 40K-70K/月",
+        "keySkills": [
+          "數據標註審核",
+          "AI訓練資料管理",
+          "品質驗證",
+          "標註框架"
+        ],
+        "aiImpact": "medium",
+        "trend": "up"
+      }
+    ],
+    "skillsAnalysis": [
+      {
+        "skill": "Python/AI框架",
+        "demand": 97,
+        "category": "tech"
+      },
+      {
+        "skill": "LLM/生成式AI",
+        "demand": 96,
+        "category": "tech"
+      },
+      {
+        "skill": "ASIC/IC設計",
+        "demand": 93,
+        "category": "tech"
+      },
+      {
+        "skill": "RAG/向量資料庫",
+        "demand": 87,
+        "category": "tech"
+      },
+      {
+        "skill": "雲端平台（AWS/GCP）",
+        "demand": 84,
+        "category": "tech"
+      },
+      {
+        "skill": "跨領域整合能力",
+        "demand": 83,
+        "category": "soft"
+      },
+      {
+        "skill": "AI Agent架構",
+        "demand": 82,
+        "category": "tech"
+      },
+      {
+        "skill": "ESG/永續法規",
+        "demand": 74,
+        "category": "domain"
+      },
+      {
+        "skill": "提示工程/MCP",
+        "demand": 72,
+        "category": "tech"
+      },
+      {
+        "skill": "AI治理/合規",
+        "demand": 68,
+        "category": "domain"
+      }
+    ],
+    "aiHighRisk": [
+      {
+        "job": "初階軟體工程師（CRUD/樣板開發）",
+        "reason": "AI Coding工具已可自動生成80%樣板程式碼，2026年22-25歲初階開發者就業人數銳減兩成，永久性裁員趨勢加劇",
+        "suggestion": "深化系統架構設計與AI整合能力，建立可展示的AI落地應用作品集，轉型為AI協同開發者"
+      },
+      {
+        "job": "傳統客服專員",
+        "reason": "AI對話系統已處理80%標準流程，2026年初全球科技業裁員逾12萬人中客服自動化首當其衝",
+        "suggestion": "轉型為AI客服訓練師、對話流程設計師或客戶體驗優化顧問，學習AI模型評估與調校"
+      },
+      {
+        "job": "中層白領管理職",
+        "reason": "AI讓管理層也難逃重組，2026年高學歷白領是AI衝擊首要目標，平均時薪比低風險職業高47%卻反而更危險",
+        "suggestion": "成為AI驅動的「人機協作型」主管，掌握AI生產力工具、建立AI落地案例展示領導力"
+      },
+      {
+        "job": "初階資料輸入/文書處理",
+        "reason": "AI OCR與自動化資料管線取代大部分手動輸入，純文書職位持續縮減",
+        "suggestion": "學習資料治理、AI訓練資料品質驗證技能，轉型為AI數據標註品控師"
+      }
+    ],
+    "aiOpportunity": [
+      {
+        "job": "AI前線部署工程師",
+        "reason": "需求年增729%，能把AI工具真正落地部署的實戰型工程師最搶手，薪資快速追上IC設計"
+      },
+      {
+        "job": "ASIC/客製化AI晶片設計師",
+        "reason": "NVIDIA NVLink Fusion異質整合開放，台灣ASIC設計人才缺口急擴，年薪動輒150萬以上"
+      },
+      {
+        "job": "AI顧問/組織轉型專家",
+        "reason": "全球2.52兆美元AI支出中企業轉型諮詢佔大宗，LinkedIn 2026年度熱門職業排名第2"
+      },
+      {
+        "job": "物理AI/機器人應用工程師",
+        "reason": "AI進入實體化階段，自動駕駛、AMR自主搬運、通用機器人人才需求從2026年開始放量"
+      },
+      {
+        "job": "AI數據治理/訓練資料品控師",
+        "reason": "AI訓練資料品質成關鍵瓶頸，LinkedIn 2026年25大熱門職業第4名，27.5%遠端辦公，女性友善職位"
+      }
+    ],
+    "actionableAdvice": [
+      "「AI×領域知識」雙軌並行才是王道：2026年最難被取代的是把AI嫁接到半導體製程、ESG法規、供應鏈管理的跨界人才，薪資議價能力遠高於純AI技術員",
+      "建立可展示的AI落地作品集：部署一個LangChain+RAG應用解決真實問題，比任何AI認證更有說服力；ML工程師平均月薪76K，比一般工程師高3-5萬",
+      "台灣軟體業降溫、半導體升溫：軟體網路徵才從8萬降至6.3萬，半導體從2.7萬漲到4.1萬——在軟體業遇到天花板，考慮橫向移動到AI系統整合或半導體應用",
+      "善用地理薪資套利：新竹/竹南年薪81萬、苗栗78萬，生活成本比台北低30%——AI伺服器與先進封裝聚落就在竹科，薪資成長最快",
+      "AI治理合規是2026-2027年新藍海：台灣《AI基本法》上路，各行業需懂法規又懂AI的複合人才，現在投資12個月進修，2027年職缺將爆發"
+    ],
+    "newsHighlights": [
+      {
+        "title": "2026年科技業裁員逾12萬人，年增66%，AI直接相關裁員佔五分之一",
+        "summary": "2026年初科技業已裁員超12.3萬人，其中9,238人明確以「AI導入」為由裁員；白領高薪、高學歷族群是首要目標",
+        "impact": "純管理職、高薪文書職危機加深；懂AI工具的中基層人才反而成為保住飯碗的關鍵差異"
+      },
+      {
+        "title": "台灣科技業每月人才缺口衝19.3萬人，半導體徵才年增23%",
+        "summary": "半導體徵才從2.7萬漲至4.1萬成長最猛，軟體網路6.3萬，AI落地部署工程師需求年增729%",
+        "impact": "懂硬體系統整合、能現場部署AI的工程師薪資加速上漲，純演算法型人才供過於求"
+      },
+      {
+        "title": "LinkedIn公布2026年25大熱門職業，AI工程師居首、創辦人頭銜暴增69%",
+        "summary": "AI工程師、AI顧問包辦前2名，數據標註員排第4；創辦人頭銜職位暴增69%，自雇與新創熱潮顯現",
+        "impact": "有3-5年軟體開發經驗的工程師是AI轉職最佳人選，2026-2027年為黃金轉職窗口"
+      },
+      {
+        "title": "類比IC設計工程師年薪中位數171萬登頂，軟體工程師時代翻盤",
+        "summary": "2026科技業十大高薪：類比IC設計171萬、數位IC設計163萬、ML工程師128萬，傳統軟體工程師退出高薪榜",
+        "impact": "有意衝高薪的工程師應優先投資IC設計或AI系統整合技能，純Web/App開發薪資天花板下移"
+      },
+      {
+        "title": "國科會IC Taiwan Grand Challenge第4屆，半導體優勢吸引全球新創落地",
+        "summary": "台灣以半導體製程優勢吸引全球AI新創，AI基本法上路帶動本土AI應用就業市場擴張",
+        "impact": "台灣AI生態系加速形成，懂半導體+AI應用整合人才需求長期看漲，政策紅利持續釋放"
+      }
+    ]
+  },
+  {
+    "date": "2026-06-12",
+    "summary": {
+      "hotIndustries": [
+        "半導體/ASIC設計",
+        "AI基礎設施",
+        "AI應用開發",
+        "AI PC供應鏈",
+        "ESG科技"
+      ],
+      "decliningIndustries": [
+        "傳統軟體業（初階）",
+        "傳統製造業",
+        "白領管理職"
+      ],
+      "aiHighImpactCount": 4
+    },
+    "hotJobs": [
+      {
+        "rank": 1,
+        "title": "AI/LLM 工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 76K-120K/月",
+        "keySkills": [
+          "LangChain",
+          "RAG",
+          "PyTorch",
+          "LLM微調"
+        ],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 2,
+        "title": "IC 設計工程師（數位/類比跨界）",
+        "industry": "半導體",
+        "salaryRange": "TWD 120K-171K/月",
+        "keySkills": [
+          "EDA工具",
+          "ASIC設計",
+          "NVLink整合",
+          "AI加速"
+        ],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 3,
+        "title": "前線部署工程師（AI Field Deployment）",
+        "industry": "AI硬體/資料中心",
+        "salaryRange": "TWD 60K-95K/月",
+        "keySkills": [
+          "系統整合",
+          "AI伺服器部署",
+          "Linux",
+          "硬體除錯"
+        ],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 4,
+        "title": "資料科學家 / ML工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 80K-122K/月",
+        "keySkills": [
+          "Python",
+          "機器學習",
+          "統計建模",
+          "SQL"
+        ],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 5,
+        "title": "AI 顧問／策略師",
+        "industry": "顧問/企業服務",
+        "salaryRange": "TWD 90K-150K/月",
+        "keySkills": [
+          "AI轉型策略",
+          "商業分析",
+          "利害關係人溝通",
+          "專案管理"
+        ],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 6,
+        "title": "先進封裝工程師（CoWoS/HBM）",
+        "industry": "半導體",
+        "salaryRange": "TWD 80K-130K/月",
+        "keySkills": [
+          "CoWoS封裝",
+          "HBM記憶體",
+          "良率提升",
+          "散熱設計"
+        ],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 7,
+        "title": "AI邊緣運算工程師",
+        "industry": "IoT/智慧製造",
+        "salaryRange": "TWD 70K-110K/月",
+        "keySkills": [
+          "邊緣AI推論",
+          "神經型態晶片",
+          "TinyML",
+          "嵌入式系統"
+        ],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 8,
+        "title": "ESG 永續數據分析師",
+        "industry": "科技/半導體",
+        "salaryRange": "TWD 55K-80K/月",
+        "keySkills": [
+          "ESG報告",
+          "碳盤查",
+          "AI數據分析",
+          "法規遵循"
+        ],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 9,
+        "title": "MLOps / AI平台工程師",
+        "industry": "科技/雲端",
+        "salaryRange": "TWD 70K-115K/月",
+        "keySkills": [
+          "Kubernetes",
+          "MLflow",
+          "CI/CD",
+          "模型監控"
+        ],
         "aiImpact": "medium",
         "trend": "up"
       },
@@ -223,22 +568,67 @@ const REPORT_DATA = [
         "title": "提示工程師 / AI產品工程師",
         "industry": "AI/軟體服務",
         "salaryRange": "TWD 50K-90K/月",
-        "keySkills": ["提示設計", "Agent架構", "MCP整合", "評估框架"],
+        "keySkills": [
+          "提示設計",
+          "Agent架構",
+          "MCP整合",
+          "評估框架"
+        ],
         "aiImpact": "low",
         "trend": "up"
       }
     ],
     "skillsAnalysis": [
-      {"skill": "Python/AI框架", "demand": 97, "category": "tech"},
-      {"skill": "LLM/生成式AI", "demand": 95, "category": "tech"},
-      {"skill": "ASIC/IC設計", "demand": 92, "category": "tech"},
-      {"skill": "RAG/向量資料庫", "demand": 85, "category": "tech"},
-      {"skill": "雲端平台", "demand": 83, "category": "tech"},
-      {"skill": "跨領域整合", "demand": 82, "category": "soft"},
-      {"skill": "AI Agent架構", "demand": 80, "category": "tech"},
-      {"skill": "ESG/永續", "demand": 72, "category": "domain"},
-      {"skill": "提示工程", "demand": 70, "category": "tech"},
-      {"skill": "AI治理/合規", "demand": 65, "category": "domain"}
+      {
+        "skill": "Python/AI框架",
+        "demand": 97,
+        "category": "tech"
+      },
+      {
+        "skill": "LLM/生成式AI",
+        "demand": 95,
+        "category": "tech"
+      },
+      {
+        "skill": "ASIC/IC設計",
+        "demand": 92,
+        "category": "tech"
+      },
+      {
+        "skill": "RAG/向量資料庫",
+        "demand": 85,
+        "category": "tech"
+      },
+      {
+        "skill": "雲端平台",
+        "demand": 83,
+        "category": "tech"
+      },
+      {
+        "skill": "跨領域整合",
+        "demand": 82,
+        "category": "soft"
+      },
+      {
+        "skill": "AI Agent架構",
+        "demand": 80,
+        "category": "tech"
+      },
+      {
+        "skill": "ESG/永續",
+        "demand": 72,
+        "category": "domain"
+      },
+      {
+        "skill": "提示工程",
+        "demand": 70,
+        "category": "tech"
+      },
+      {
+        "skill": "AI治理/合規",
+        "demand": 65,
+        "category": "domain"
+      }
     ],
     "aiHighRisk": [
       {
@@ -263,11 +653,26 @@ const REPORT_DATA = [
       }
     ],
     "aiOpportunity": [
-      {"job": "AI落地工程師（AI Field Engineer）", "reason": "需求年增729%，企業最缺能把AI工具真正部署上線的實戰型人才"},
-      {"job": "ASIC/客製化AI晶片工程師", "reason": "NVIDIA NVLink Fusion 6月發布，異質晶片整合成主流，IC設計人才缺口急速擴大"},
-      {"job": "AI顧問/組織轉型專家", "reason": "全球2.52兆美元AI支出中，企業轉型諮詢佔大宗，需求與薪資同步飛漲"},
-      {"job": "物理AI/機器人應用工程師", "reason": "AI發展進入「實體AI」階段，自動駕駛、自主搬運車、通用機器人需求開始放量"},
-      {"job": "AI PC供應鏈工程師", "reason": "2026年AI PC滲透率「破關」，台灣供應鏈受惠全面，相關職位大量開缺"}
+      {
+        "job": "AI落地工程師（AI Field Engineer）",
+        "reason": "需求年增729%，企業最缺能把AI工具真正部署上線的實戰型人才"
+      },
+      {
+        "job": "ASIC/客製化AI晶片工程師",
+        "reason": "NVIDIA NVLink Fusion 6月發布，異質晶片整合成主流，IC設計人才缺口急速擴大"
+      },
+      {
+        "job": "AI顧問/組織轉型專家",
+        "reason": "全球2.52兆美元AI支出中，企業轉型諮詢佔大宗，需求與薪資同步飛漲"
+      },
+      {
+        "job": "物理AI/機器人應用工程師",
+        "reason": "AI發展進入「實體AI」階段，自動駕駛、自主搬運車、通用機器人需求開始放量"
+      },
+      {
+        "job": "AI PC供應鏈工程師",
+        "reason": "2026年AI PC滲透率「破關」，台灣供應鏈受惠全面，相關職位大量開缺"
+      }
     ],
     "actionableAdvice": [
       "ASIC時代來臨：NVIDIA NVLink Fusion本月發布，異質晶片整合成主流——有IC設計基礎者立即補修ASIC設計與HBM介面知識，這是未來5年最高薪的技術方向",
