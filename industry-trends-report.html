@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 時代產業趨勢儀表板</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root[data-theme="dark"] {
+    --bg: #0f172a; --bg2: #1e293b; --bg3: #334155;
+    --text: #f1f5f9; --text2: #94a3b8;
+    --primary: #6366f1; --growth: #10b981;
+    --warning: #f59e0b; --danger: #ef4444;
+    --border: #334155;
+  }
+  :root[data-theme="light"] {
+    --bg: #f8fafc; --bg2: #ffffff; --bg3: #e2e8f0;
+    --text: #0f172a; --text2: #64748b;
+    --primary: #4f46e5; --growth: #059669;
+    --warning: #d97706; --danger: #dc2626;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; flex-wrap: wrap; gap: 12px; }
+  h1 { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+  .header-meta { color: var(--text2); font-size: 0.875rem; }
+  .theme-btn { background: var(--bg3); border: none; color: var(--text); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.875rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .card-label { font-size: 0.75rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .card-value { font-size: 2rem; font-weight: 700; }
+  .card-value.primary { color: var(--primary); }
+  .card-value.growth { color: var(--growth); }
+  .card-value.warning { color: var(--warning); }
+  .card-value.danger { color: var(--danger); }
+  .section { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+  .section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: var(--text); }
+  .chart-container { position: relative; height: 280px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 10px 12px; font-size: 0.75rem; color: var(--text2); text-transform: uppercase; border-bottom: 1px solid var(--border); }
+  td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 0.875rem; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; }
+  .badge-high { background: rgba(239,68,68,0.15); color: var(--danger); }
+  .badge-medium { background: rgba(245,158,11,0.15); color: var(--warning); }
+  .badge-low { background: rgba(16,185,129,0.15); color: var(--growth); }
+  .badge-up { background: rgba(99,102,241,0.15); color: var(--primary); }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag { padding: 6px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 500; }
+  .risk-card { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  .risk-card h4 { color: var(--danger); margin-bottom: 6px; }
+  .risk-card p { font-size: 0.875rem; color: var(--text2); margin-bottom: 4px; }
+  .advice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .advice-card { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: 8px; padding: 16px; font-size: 0.875rem; }
+  .advice-num { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .timeline { }
+  .timeline-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+  .timeline-header { padding: 14px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+  .timeline-header:hover { background: var(--bg3); }
+  .timeline-date { font-weight: 600; }
+  .timeline-arrow { color: var(--text2); transition: transform 0.2s; }
+  .timeline-body { display: none; padding: 16px; border-top: 1px solid var(--border); background: var(--bg); }
+  .timeline-body.open { display: block; }
+  .news-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-weight: 500; margin-bottom: 4px; }
+  .news-meta { font-size: 0.8rem; color: var(--text2); }
+  @media (max-width: 640px) { h1 { font-size: 1.3rem; } .card-value { font-size: 1.5rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <h1>📊 AI 時代產業趨勢儀表板</h1>
+      <div class="header-meta">最後更新：<span id="lastUpdated"></span>｜累計分析 <span id="totalUpdates"></span> 次</div>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">🌓 切換主題</button>
+  </header>
+
+  <div class="cards">
+    <div class="card"><div class="card-label">今日熱門產業</div><div class="card-value primary" id="hotCount">-</div></div>
+    <div class="card"><div class="card-label">分析職缺數</div><div class="card-value growth" id="jobCount">-</div></div>
+    <div class="card"><div class="card-label">AI 高衝擊職缺</div><div class="card-value danger" id="aiHighCount">-</div></div>
+    <div class="card"><div class="card-label">行動建議</div><div class="card-value warning" id="adviceCount">-</div></div>
+  </div>
+
+  <div class="section">
+    <h2>🏭 產業熱度分析</h2>
+    <div class="chart-container"><canvas id="industryChart"></canvas></div>
+  </div>
+
+  <div class="section">
+    <h2>💼 熱門職缺排行榜（今日）</h2>
+    <table>
+      <thead><tr><th>#</th><th>職缺</th><th>產業</th><th>薪資範圍</th><th>關鍵技能</th><th>AI衝擊</th><th>趨勢</th></tr></thead>
+      <tbody id="jobsTable"></tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🛠️ 技能需求分析</h2>
+    <div class="chart-container"><canvas id="skillsChart"></canvas></div>
+  </div>
+
+  <div class="section">
+    <h2>⚠️ AI 衝擊警示區</h2>
+    <div id="riskCards"></div>
+  </div>
+
+  <div class="section">
+    <h2>🚀 給年輕人的行動建議</h2>
+    <div class="advice-grid" id="adviceGrid"></div>
+  </div>
+
+  <div class="section">
+    <h2>📰 近期新聞要點</h2>
+    <div id="newsList"></div>
+  </div>
+
+  <div class="section">
+    <h2>🕐 歷史更新時間軸</h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</div>
+
+<script>
+/* DATA_START */
+const REPORT_DATA = [
+  {
+    "date": "2026-06-12",
+    "summary": {
+      "hotIndustries": ["半導體/IC設計", "AI應用開發", "資料中心基礎設施", "生成式AI", "ESG科技"],
+      "decliningIndustries": ["傳統軟體業", "傳統製造業"],
+      "aiHighImpactCount": 3
+    },
+    "hotJobs": [
+      {
+        "rank": 1,
+        "title": "AI/LLM 工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 76K-120K/月",
+        "keySkills": ["LangChain", "RAG", "PyTorch", "LLM"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 2,
+        "title": "IC 設計工程師（數位/類比）",
+        "industry": "半導體",
+        "salaryRange": "TWD 120K-171K/月",
+        "keySkills": ["EDA工具", "Verilog", "SPICE", "AI加速"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 3,
+        "title": "資料科學家",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 80K-122K/月",
+        "keySkills": ["Python", "機器學習", "統計", "SQL"],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 4,
+        "title": "前線部署工程師（Field Deployment）",
+        "industry": "AI硬體",
+        "salaryRange": "TWD 60K-90K/月",
+        "keySkills": ["系統整合", "硬體除錯", "Linux", "網路"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 5,
+        "title": "AI 顧問／策略師",
+        "industry": "顧問/企業服務",
+        "salaryRange": "TWD 90K-150K/月",
+        "keySkills": ["AI策略", "商業分析", "溝通", "專案管理"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 6,
+        "title": "先進封裝工程師（CoWoS/HBM）",
+        "industry": "半導體",
+        "salaryRange": "TWD 80K-130K/月",
+        "keySkills": ["封裝製程", "CoWoS", "HBM", "良率提升"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 7,
+        "title": "MLOps / DevOps 工程師",
+        "industry": "科技/雲端",
+        "salaryRange": "TWD 70K-110K/月",
+        "keySkills": ["Kubernetes", "MLflow", "CI/CD", "雲端平台"],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 8,
+        "title": "ESG 永續分析師",
+        "industry": "科技/半導體",
+        "salaryRange": "TWD 55K-80K/月",
+        "keySkills": ["ESG報告", "碳盤查", "資料分析", "法規遵循"],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 9,
+        "title": "資安工程師",
+        "industry": "科技/金融",
+        "salaryRange": "TWD 65K-100K/月",
+        "keySkills": ["零信任架構", "AI威脅偵測", "滲透測試", "ISO27001"],
+        "aiImpact": "low",
+        "trend": "stable"
+      },
+      {
+        "rank": 10,
+        "title": "提示工程師（Prompt Engineer）",
+        "industry": "AI/媒體",
+        "salaryRange": "TWD 50K-85K/月",
+        "keySkills": ["提示設計", "LLM微調", "評估框架", "Python"],
+        "aiImpact": "low",
+        "trend": "up"
+      }
+    ],
+    "skillsAnalysis": [
+      {"skill": "Python/AI框架", "demand": 97, "category": "tech"},
+      {"skill": "LLM/生成式AI", "demand": 95, "category": "tech"},
+      {"skill": "IC設計/EDA", "demand": 90, "category": "tech"},
+      {"skill": "雲端平台", "demand": 85, "category": "tech"},
+      {"skill": "資料分析", "demand": 83, "category": "tech"},
+      {"skill": "跨領域整合", "demand": 80, "category": "soft"},
+      {"skill": "RAG/向量資料庫", "demand": 78, "category": "tech"},
+      {"skill": "提示工程", "demand": 75, "category": "tech"},
+      {"skill": "ESG/永續", "demand": 70, "category": "domain"},
+      {"skill": "專案管理", "demand": 68, "category": "soft"}
+    ],
+    "aiHighRisk": [
+      {
+        "job": "傳統客服專員",
+        "reason": "對話式AI與自動化客服系統已可處理80%常見問題",
+        "suggestion": "轉型為AI客服訓練師或使用者體驗設計師"
+      },
+      {
+        "job": "初階資料輸入人員",
+        "reason": "AI OCR與自動化資料管線取代大部分手動輸入工作",
+        "suggestion": "學習資料品質驗證與資料治理技能，朝資料工程師發展"
+      },
+      {
+        "job": "初階程式設計師（CRUD開發）",
+        "reason": "GitHub Copilot等AI工具已可自動生成80%樣板程式碼，初階開發者就業人數銳減兩成",
+        "suggestion": "深化系統架構設計、AI整合與領域知識，成為AI協同開發者"
+      }
+    ],
+    "aiOpportunity": [
+      {"job": "AI工程師／LLM工程師", "reason": "生成式AI應用從試驗進入規模化，企業急需能將模型產品化的工程人才"},
+      {"job": "前線AI部署工程師", "reason": "AI伺服器與邊緣裝置快速擴張，需求年增729%"},
+      {"job": "ESG永續分析師", "reason": "台灣半導體業響應淨零要求，跨界ESG+科技人才稀缺，議價能力高"},
+      {"job": "AI顧問/策略師", "reason": "99%企業高管計畫導入AI，需要能協助組織轉型的策略型人才"}
+    ],
+    "actionableAdvice": [
+      "立即建立 AI 工具實作作品集：用 LangChain/RAG 建一個能實際解決問題的應用，放上 GitHub，比任何證書都有說服力",
+      "半導體業薪資全面領先軟體業，若有理工背景考慮朝 IC 設計或先進封裝方向進修，類比+數位跨界人才年薪可達 160 萬以上",
+      "不要只學 AI 工具使用，要懂 AI 系統評估與優化——能設計評估框架、改善模型輸出品質的人，薪資比只會呼叫 API 的人高 30-50%",
+      "台灣 AI 基本法已通過，AI 治理與法規遵循將成新興專業，法律、政策、科技三棲人才的市場缺口正在快速擴大",
+      "桃竹苗科學園區薪資成長最快（年薪 78-81 萬），不一定要留台北；願意移居竹科區域，薪資競爭力與生活品質的比值更高"
+    ],
+    "newsHighlights": [
+      {
+        "title": "台灣科技業每月人才缺口達 19.3 萬人",
+        "summary": "半導體業徵才年增23%衝上4.1萬人，軟體網路業微幅下滑至6.3萬人",
+        "impact": "技術人才薪資繼續上漲，跨領域整合能力成最大競爭優勢"
+      },
+      {
+        "title": "史丹佛 2026 AI Index：中美頂尖模型差距僅 2.7%",
+        "summary": "AI民主化加速，22-25歲初階開發者就業人數銳減兩成，初階職位受衝擊最深",
+        "impact": "新鮮人就業競爭更激烈，需以實作能力取代學歷光環"
+      },
+      {
+        "title": "前線部署工程師需求年增 729%",
+        "summary": "AI伺服器與邊緣運算硬體快速擴張，帶動現場部署與系統整合人才爆發需求",
+        "impact": "不擅純寫程式但懂硬體系統的工程師，迎來最佳入場時機"
+      },
+      {
+        "title": "資策會公布 2026 年十大 AI 關鍵技術",
+        "summary": "AI Agent、實體AI（Physical AI）、神經型態運算列為最重要技術方向",
+        "impact": "相關技術棧的學習與專業認證投資報酬率最高"
+      },
+      {
+        "title": "台灣《人工智慧基本法》正式上路，AI 治理進入法制化",
+        "summary": "行政院設國家AI戰略委員會，分級管理高風險AI應用",
+        "impact": "AI合規、治理、倫理相關職缺將在未來12個月大量浮現"
+      }
+    ]
+  }
+];
+/* DATA_END */
+
+const LAST_UPDATED = "2026-06-12";
+
+function toggleTheme() {
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  renderCharts();
+}
+
+function getColor(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue('--' + name).trim();
+}
+
+let industryChartInst, skillsChartInst;
+
+function render() {
+  if (!REPORT_DATA.length) return;
+  const d = REPORT_DATA[0];
+  document.getElementById('lastUpdated').textContent = d.date;
+  document.getElementById('totalUpdates').textContent = REPORT_DATA.length;
+  document.getElementById('hotCount').textContent = d.summary.hotIndustries.length;
+  document.getElementById('jobCount').textContent = d.hotJobs.length;
+  document.getElementById('aiHighCount').textContent = d.summary.aiHighImpactCount || d.hotJobs.filter(j=>j.aiImpact==='high').length;
+  document.getElementById('adviceCount').textContent = d.actionableAdvice.length;
+
+  const tbody = document.getElementById('jobsTable');
+  tbody.innerHTML = d.hotJobs.map(j => `
+    <tr>
+      <td>${j.rank}</td>
+      <td><strong>${j.title}</strong></td>
+      <td>${j.industry}</td>
+      <td>${j.salaryRange}</td>
+      <td>${j.keySkills.map(s=>`<span class="badge badge-low">${s}</span>`).join(' ')}</td>
+      <td><span class="badge badge-${j.aiImpact}">${j.aiImpact==='high'?'高' : j.aiImpact==='medium'?'中':'低'}</span></td>
+      <td>${j.trend==='up'?'⬆️':j.trend==='down'?'⬇️':'➡️'}</td>
+    </tr>`).join('');
+
+  document.getElementById('riskCards').innerHTML = (d.aiHighRisk||[]).map(r=>`
+    <div class="risk-card">
+      <h4>⚠️ ${r.job}</h4>
+      <p><strong>風險原因：</strong>${r.reason}</p>
+      <p><strong>轉型建議：</strong>${r.suggestion}</p>
+    </div>`).join('');
+
+  document.getElementById('adviceGrid').innerHTML = d.actionableAdvice.map((a,i)=>`
+    <div class="advice-card"><div class="advice-num">${i+1}</div>${a}</div>`).join('');
+
+  document.getElementById('newsList').innerHTML = (d.newsHighlights||[]).map(n=>`
+    <div class="news-item">
+      <div class="news-title">${n.title}</div>
+      <div class="news-meta">${n.summary}｜<em>影響：${n.impact}</em></div>
+    </div>`).join('');
+
+  document.getElementById('timeline').innerHTML = REPORT_DATA.map((day,i)=>`
+    <div class="timeline-item">
+      <div class="timeline-header" onclick="toggleTimeline(${i})">
+        <span class="timeline-date">${day.date}</span>
+        <span>熱門：${day.summary.hotIndustries.slice(0,2).join('、')} ｜ 分析 ${day.hotJobs.length} 個職缺 <span class="timeline-arrow" id="arrow-${i}">▼</span></span>
+      </div>
+      <div class="timeline-body" id="body-${i}">
+        <strong>行動建議：</strong><ol>${day.actionableAdvice.map(a=>`<li>${a}</li>`).join('')}</ol>
+      </div>
+    </div>`).join('');
+
+  renderCharts();
+}
+
+function toggleTimeline(i) {
+  const body = document.getElementById('body-'+i);
+  const arrow = document.getElementById('arrow-'+i);
+  body.classList.toggle('open');
+  arrow.textContent = body.classList.contains('open') ? '▲' : '▼';
+}
+
+function renderCharts() {
+  if (!REPORT_DATA.length) return;
+  const d = REPORT_DATA[0];
+  const primary = '#6366f1', growth = '#10b981', warning = '#f59e0b', danger = '#ef4444';
+  const textColor = document.documentElement.getAttribute('data-theme')==='dark' ? '#94a3b8' : '#64748b';
+  const gridColor = document.documentElement.getAttribute('data-theme')==='dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+
+  if (industryChartInst) industryChartInst.destroy();
+  const allIndustries = [...d.summary.hotIndustries.map(i=>({name:i,type:'hot'})), ...((d.summary.decliningIndustries||[]).map(i=>({name:i,type:'decline'})))];
+  industryChartInst = new Chart(document.getElementById('industryChart'), {
+    type: 'bar',
+    data: {
+      labels: allIndustries.map(i=>i.name),
+      datasets: [{
+        label: '熱度指數',
+        data: allIndustries.map((i,idx)=> i.type==='hot' ? (allIndustries.length-idx)*10 : (idx-allIndustries.length)*5),
+        backgroundColor: allIndustries.map(i=> i.type==='hot' ? growth : danger),
+        borderRadius: 6
+      }]
+    },
+    options: { indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:{color:gridColor},ticks:{color:textColor}},y:{grid:{display:false},ticks:{color:textColor}}} }
+  });
+
+  if (skillsChartInst) skillsChartInst.destroy();
+  const topSkills = (d.skillsAnalysis||[]).slice(0,10);
+  skillsChartInst = new Chart(document.getElementById('skillsChart'), {
+    type: 'bar',
+    data: {
+      labels: topSkills.map(s=>s.skill),
+      datasets: [{
+        label: '需求熱度',
+        data: topSkills.map(s=>s.demand),
+        backgroundColor: topSkills.map(s=> s.category==='tech'?primary : s.category==='soft'?warning : growth),
+        borderRadius: 6
+      }]
+    },
+    options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:{display:false},ticks:{color:textColor}},y:{grid:{color:gridColor},ticks:{color:textColor}, max:100}} }
+  });
+}
+
+render();
+</script>
+</body>
+</html>
