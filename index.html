@@ -132,6 +132,181 @@ const REPORT_DATA = [
   {
     "date": "2026-06-12",
     "summary": {
+      "hotIndustries": ["半導體/AI晶片設計", "Agentic AI應用開發", "AI資料中心基礎設施", "AI PC供應鏈", "生技/AI醫療"],
+      "decliningIndustries": ["傳統初階軟體開發", "白領管理職", "傳統文書事務職"],
+      "aiHighImpactCount": 4
+    },
+    "hotJobs": [
+      {
+        "rank": 1,
+        "title": "AI/LLM 工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 76K-120K/月",
+        "keySkills": ["LangChain", "RAG", "PyTorch", "LLM微調"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 2,
+        "title": "ASIC/IC 設計工程師",
+        "industry": "半導體",
+        "salaryRange": "TWD 120K-171K/月",
+        "keySkills": ["EDA工具", "ASIC設計", "HBM整合", "類比數位跨界"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 3,
+        "title": "前線部署工程師（AI Field Deployment）",
+        "industry": "AI硬體/資料中心",
+        "salaryRange": "TWD 60K-95K/月",
+        "keySkills": ["AI伺服器部署", "系統整合", "Linux", "硬體除錯"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 4,
+        "title": "Agentic AI 產品工程師",
+        "industry": "AI/軟體服務",
+        "salaryRange": "TWD 65K-100K/月",
+        "keySkills": ["Agent架構", "MCP整合", "工作流自動化", "API設計"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 5,
+        "title": "資料科學家 / ML工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 80K-122K/月",
+        "keySkills": ["Python", "機器學習", "統計建模", "SQL"],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 6,
+        "title": "AI 顧問／組織轉型策略師",
+        "industry": "顧問/企業服務",
+        "salaryRange": "TWD 90K-150K/月",
+        "keySkills": ["AI轉型策略", "變革管理", "商業分析", "利害關係人溝通"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 7,
+        "title": "先進封裝工程師（CoWoS/HBM）",
+        "industry": "半導體",
+        "salaryRange": "TWD 80K-130K/月",
+        "keySkills": ["CoWoS封裝", "HBM記憶體", "良率提升", "散熱設計"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 8,
+        "title": "MLOps / AI平台工程師",
+        "industry": "科技/雲端",
+        "salaryRange": "TWD 70K-115K/月",
+        "keySkills": ["Kubernetes", "MLflow", "CI/CD", "模型監控"],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 9,
+        "title": "ESG 永續數據分析師",
+        "industry": "科技/半導體",
+        "salaryRange": "TWD 55K-80K/月",
+        "keySkills": ["ESG報告", "碳盤查", "AI數據分析", "法規遵循"],
+        "aiImpact": "medium",
+        "trend": "stable"
+      },
+      {
+        "rank": 10,
+        "title": "資安 / AI安全工程師",
+        "industry": "資安/科技",
+        "salaryRange": "TWD 70K-110K/月",
+        "keySkills": ["滲透測試", "AI安全評估", "零信任架構", "合規審計"],
+        "aiImpact": "low",
+        "trend": "up"
+      }
+    ],
+    "skillsAnalysis": [
+      {"skill": "Python/AI框架", "demand": 97, "category": "tech"},
+      {"skill": "Agentic AI/LLM", "demand": 96, "category": "tech"},
+      {"skill": "ASIC/IC設計", "demand": 93, "category": "tech"},
+      {"skill": "RAG/向量資料庫", "demand": 87, "category": "tech"},
+      {"skill": "MLOps/雲端平台", "demand": 84, "category": "tech"},
+      {"skill": "AI Agent架構", "demand": 82, "category": "tech"},
+      {"skill": "跨領域整合能力", "demand": 80, "category": "soft"},
+      {"skill": "ESG/永續分析", "demand": 73, "category": "domain"},
+      {"skill": "AI治理/合規", "demand": 68, "category": "domain"},
+      {"skill": "提示工程", "demand": 67, "category": "tech"}
+    ],
+    "aiHighRisk": [
+      {
+        "job": "初階軟體工程師（樣板/CRUD開發）",
+        "reason": "GitHub Copilot等AI工具已可自動生成80%樣板程式碼，22-25歲初階開發者就業銳減兩成，企業縮編初階編制轉而要求AI協同能力",
+        "suggestion": "深化系統架構、AI整合與特定領域知識，轉型成能主導AI開發流程的「高階AI協同工程師」"
+      },
+      {
+        "job": "傳統客服專員",
+        "reason": "對話式AI與自動化客服系統已可處理80%標準流程，AI客服滲透率在2026年突破50%",
+        "suggestion": "轉型為AI客服訓練師、對話流程設計師或客戶體驗顧問，薪資反而可提升30%"
+      },
+      {
+        "job": "中階白領管理職（一般主管）",
+        "reason": "美國2026年前4月裁員30萬中，科技業逆勢增33%但管理職裁員比率最高，AI讓組織扁平化成不可逆趨勢",
+        "suggestion": "強化AI工具應用超能力，成為帶領AI轉型的「人機協作型」主管，或往更高層技術/策略職進化"
+      },
+      {
+        "job": "初階資料輸入 / 文書處理職",
+        "reason": "AI OCR、自動化資料管線取代大部分手動輸入，WEF預估此類職位到2030年消失67.1%",
+        "suggestion": "學習資料治理、品質驗證與AI訓練資料標註審核，成為AI資料品管專家"
+      }
+    ],
+    "aiOpportunity": [
+      {"job": "AI落地工程師（Field Deployment）", "reason": "職缺年增729%，是全台灣成長最快的工程職類，廣達/鴻海/緯穎等大廠搶人激烈"},
+      {"job": "Agentic AI 開發者", "reason": "AI進入「代理式AI」第三階段，能設計多步驟自主Agent工作流的開發者嚴重供不應求"},
+      {"job": "ASIC/客製化AI晶片工程師", "reason": "NVLink Fusion異質整合開放第三方，IC設計人才缺口在2026下半年急速擴大"},
+      {"job": "AI顧問/組織轉型專家", "reason": "全球2.52兆美元AI支出中企業轉型諮詢佔大宗，8年以上資歷者薪資飛漲"},
+      {"job": "物理AI/機器人應用工程師", "reason": "AI進入實體世界階段，自動駕駛、AGV、人形機器人量產需求開始放量"}
+    ],
+    "actionableAdvice": [
+      "Agentic AI是2026下半年最強薪資槓桿：從「會用LLM」升級為「能設計多步驟AI Agent工作流程」的開發者，月薪差距已達15,000-30,000元，立即開始用LangGraph/AutoGen實作真實專案",
+      "AI Field Engineer（前線部署工程師）是最速成的高薪路徑：有軟硬體整合背景者，優先鎖定廣達/鴻海/緯穎的FAE/部署工程師職位，年增729%、月薪60-95K、2026年仍是空缺最多的職類",
+      "ASIC時代已來：NVLink Fusion開放異質整合，類比IC設計師年薪171萬遠超純軟體工程師，有軟體背景者應補修Verilog/ASIC基礎，進入最高薪資的半導體轉型路徑",
+      "AI治理合規成新藍海：台灣《AI基本法》正式上路，企業急需懂AI又懂法律/政策的跨域人才，現在取得ISO 42001 AI管理系統認證，12個月後此職類薪資預計跳漲40%",
+      "桃竹苗地理紅利不可忽視：竹科AI伺服器與先進封裝聚落薪資成長最快（78-81萬年薪起跳），生活成本比台北低30%，地理套利效益明顯"
+    ],
+    "newsHighlights": [
+      {
+        "title": "LinkedIn 2026年十大熱門職業出爐：AI工程師蟬聯第一，顧問需求最旺",
+        "summary": "AI工程師以LangChain、RAG、PyTorch為核心技能登頂，前三名全為AI相關職位，中位數資歷3.7年多從軟體工程師轉型",
+        "impact": "有3-5年軟體開發背景者是AI轉職最佳人選，2026-2027年是黃金轉型窗口，錯過將面臨更高門檻"
+      },
+      {
+        "title": "台灣科技業人才月缺口衝19.3萬，半導體徵才成長最猛達4.1萬",
+        "summary": "半導體從2.7萬漲到4.1萬（+52%），軟體網路維持6.3萬，「能讓AI落地」的人比「會寫AI」更搶手",
+        "impact": "整體科技就業市場仍屬賣方市場，主動求職者議價空間大，不需委屈接受低薪offer"
+      },
+      {
+        "title": "全美2026前4月裁員30萬但科技業逆勢增33%，白領管理職首當其衝",
+        "summary": "AI自動化重組驅動科技業轉型招募，應屆畢業生失業率5.6%高於全美平均4.2%",
+        "impact": "管理職求職者須加速AI技能轉型，應屆生需差異化，實戰AI作品集比學歷更重要"
+      },
+      {
+        "title": "WEF報告：AI將到2030年取代9,200萬個工作，同時創造1.7億個新職位",
+        "summary": "淨增7,800萬職位，結構性轉型痛點在於高風險工作者再技能化速度跟不上AI替代速度",
+        "impact": "主動再技能化的人將站在浪頭，等待觀望者面臨結構性失業，轉型越早越有優勢"
+      },
+      {
+        "title": "史丹佛AI Index 2026：中美模型差距縮至2.7%，AI民主化加速衝擊初階白領",
+        "summary": "AI能力快速平權化，22-25歲初階開發者就業人數銳減兩成，高學歷白領成AI首要衝擊目標",
+        "impact": "高學歷已非保障，AI實作能力與領域知識成為新時代就業核心競爭力"
+      }
+    ]
+  },
+  {
+    "date": "2026-06-12",
+    "summary": {
       "hotIndustries": ["半導體/ASIC設計", "AI基礎設施", "AI應用開發", "AI PC供應鏈", "ESG科技"],
       "decliningIndustries": ["傳統軟體業（初階）", "傳統製造業", "白領管理職"],
       "aiHighImpactCount": 4
