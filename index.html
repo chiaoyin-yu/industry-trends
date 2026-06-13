@@ -130,6 +130,418 @@
 /* DATA_START */
 const REPORT_DATA = [
   {
+    "date": "2026-06-13",
+    "summary": {
+      "hotIndustries": [
+        "AI Agent應用服務",
+        "AI基礎設施/資料中心",
+        "半導體/異質整合封裝",
+        "數位心理健康/EAP",
+        "AI安全合規/治理"
+      ],
+      "decliningIndustries": [
+        "傳統QA測試",
+        "白領中層管理職",
+        "初階樣板軟體工程師"
+      ],
+      "aiHighImpactCount": 5
+    },
+    "hotJobs": [
+      {
+        "rank": 1,
+        "title": "AI前線部署/落地工程師",
+        "industry": "AI硬體/資料中心",
+        "salaryRange": "TWD 62K-98K/月",
+        "keySkills": ["系統整合", "AI伺服器部署", "Linux", "硬體除錯"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 2,
+        "title": "LLMOps/AI平台工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 70K-115K/月",
+        "keySkills": ["LangFuse", "評估框架", "RAG系統", "成本監控"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 3,
+        "title": "AI Agent架構工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 78K-125K/月",
+        "keySkills": ["Agent工作流", "LangChain", "MCP協定", "多模型協作"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 4,
+        "title": "IC設計工程師（ASIC/NVLink整合）",
+        "industry": "半導體",
+        "salaryRange": "TWD 120K-175K/月",
+        "keySkills": ["EDA工具", "ASIC設計", "NVLink Fusion", "異質整合"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 5,
+        "title": "AI安全工程師（LLM Red Team）",
+        "industry": "科技/資安",
+        "salaryRange": "TWD 68K-115K/月",
+        "keySkills": ["LLM漏洞評估", "AI紅隊", "合規框架", "AI治理"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 6,
+        "title": "Workplace Mental Health Consultant",
+        "industry": "心理健康/EAP",
+        "salaryRange": "TWD 65K-110K/月",
+        "keySkills": ["EAP設計", "AI工具評估", "組織心理健康", "員工焦慮管理"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 7,
+        "title": "先進封裝工程師（CoWoS/HBM）",
+        "industry": "半導體",
+        "salaryRange": "TWD 82K-135K/月",
+        "keySkills": ["CoWoS封裝", "HBM記憶體", "液冷整合", "良率優化"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 8,
+        "title": "AI顧問/數位轉型策略師",
+        "industry": "顧問/企業服務",
+        "salaryRange": "TWD 90K-155K/月",
+        "keySkills": ["AI轉型策略", "商業分析", "利害關係人溝通", "ROI量化"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 9,
+        "title": "Digital Mental Health Designer",
+        "industry": "心理健康科技",
+        "salaryRange": "TWD 55K-92K/月",
+        "keySkills": ["行為設計", "心理學背景", "AI互動設計", "危機偵測UX"],
+        "aiImpact": "medium",
+        "trend": "up"
+      },
+      {
+        "rank": 10,
+        "title": "Context/Prompt Engineer",
+        "industry": "AI服務",
+        "salaryRange": "TWD 52K-92K/月",
+        "keySkills": ["上下文架構設計", "Agent工作流", "LLM評估", "安全提示設計"],
+        "aiImpact": "low",
+        "trend": "up"
+      }
+    ],
+    "skillsAnalysis": [
+      {"skill": "Python/AI框架", "demand": 97, "category": "tech"},
+      {"skill": "LLM/Agent架構", "demand": 96, "category": "tech"},
+      {"skill": "ASIC/異質整合設計", "demand": 94, "category": "tech"},
+      {"skill": "LLMOps/評估框架", "demand": 90, "category": "tech"},
+      {"skill": "RAG/向量資料庫", "demand": 88, "category": "tech"},
+      {"skill": "AI安全合規", "demand": 85, "category": "domain"},
+      {"skill": "雲端平台（AWS/GCP）", "demand": 83, "category": "tech"},
+      {"skill": "跨領域整合能力", "demand": 82, "category": "soft"},
+      {"skill": "心理健康×AI設計", "demand": 74, "category": "domain"},
+      {"skill": "MCP協定/Agent互通", "demand": 70, "category": "tech"}
+    ],
+    "aiHighRisk": [
+      {
+        "job": "傳統QA測試工程師",
+        "reason": "GitHub Copilot 6月計費模式改為按使用量計費，企業大幅評估AI輔助開發ROI；多家公司持續削減QA人力，AI自動測試覆蓋率達可接受水準",
+        "suggestion": "立即轉型為AI測試策略師，掌握LLM評估golden set設計、RAGAS品質驗證與自動化測試架構能力"
+      },
+      {
+        "job": "初階軟體工程師（CRUD/樣板開發）",
+        "reason": "Anthropic限制Claude Code Opus模型存取後，企業仍持續採用AI編碼工具；22-25歲初階開發者就業率持續下滑，行政初職空缺三年跌九成",
+        "suggestion": "深化系統架構與AI整合技能，建立LLMOps或Agent應用作品集，展示AI時代的差異化價值"
+      },
+      {
+        "job": "白領中層管理職/Project Manager",
+        "reason": "Coinbase扁平化模式持續擴散，組織消除純管理職已成2026年主流管理趨勢，AI讓進度追蹤自動化",
+        "suggestion": "轉型為兼具技術執行力的AI驅動主管，展示能親自操作AI工具並帶領團隊落地的雙重能力"
+      },
+      {
+        "job": "傳統Business Analyst（文書輸出型）",
+        "reason": "Spring Health 2026研究顯示AI焦慮影響近四成職場員工，但AI仍持續自動化PRD、流程圖生成，文書型BA職位壓力持續",
+        "suggestion": "轉型為AI產品策略師，深耕垂直領域知識（醫療/金融/製造），以不可取代的商業判斷力建立護城河"
+      }
+    ],
+    "aiOpportunity": [
+      {
+        "job": "AI Agent架構工程師",
+        "reason": "NVIDIA NVLink Fusion發布後異質整合複雜度增加，企業AI Agent從單模型轉向多模型協作，架構設計需求爆發；iKala研究指出AI Agent 2026年5大落地場景全面啟動"
+      },
+      {
+        "job": "LLMOps工程師",
+        "reason": "GitHub Copilot計費模式改變後企業更需要成本監控與效益評估能力，LLMOps工具市場2027年突破20億美元，每家AI產品公司都需要這類人才"
+      },
+      {
+        "job": "AI安全合規工程師",
+        "reason": "紐約、加州已立法要求AI心理健康工具必須具備自傷偵測協定與人工揭露義務，台灣AI基本法治理框架持續落實，AI合規專才缺口急開"
+      },
+      {
+        "job": "Workplace Mental Health Consultant",
+        "reason": "Spring Health 2026報告顯示AI焦慮已是新型職場壓力源，AllOne Health EAP年報確認企業對AI輔助EAP投入持續增加，ROI達1:2.3，顧問需求大增"
+      },
+      {
+        "job": "Crisis Response AI Specialist",
+        "reason": "紐約/加州明令AI心理健康平台須建立危機偵測機制，加上全球各平台AI無法可靠辨識自傷風險，具臨床背景的AI危機系統監督專才成稀缺資源"
+      }
+    ],
+    "actionableAdvice": [
+      "GitHub Copilot 6月計費改制是行動訊號：趁企業重新評估AI工具ROI的時機，主動提案「AI輔助開發效益報告」——懂得量化AI工具產值的工程師，是裁員浪潮中最後被砍的人",
+      "AI Agent時代的最強入場券是MCP協定：NVIDIA NVLink Fusion讓硬體異質整合複雜化，軟體層同樣需要Agent互通架構師；現在學習MCP（Model Context Protocol）設計，6個月內即可成為稀缺人才",
+      "心理健康×AI合規是2026下半年最被低估的機會：紐約/加州已立法規範AI心理工具安全性，台灣AI基本法也在落實——具心理背景的人可成為企業「AI心理工具評估顧問」，跨界稀缺性極高",
+      "QA轉型已進入倒數階段：別等公司宣布裁員；現在就開始建立LLM評估資料集與RAGAS指標作品集，並在LinkedIn公開「AI品質工程師」標籤——市場對這類人才的認知才剛開始建立",
+      "AI焦慮是你的職涯差異化：Spring Health研究顯示24%員工因AI產生資訊過載焦慮——懂得整合AI工具同時協助團隊管理AI焦慮的人，是組織最想留下的「心理安全感守門員」"
+    ],
+    "newsHighlights": [
+      {
+        "title": "GitHub Copilot 6月1日計費改制，企業重新評估AI編碼工具ROI",
+        "summary": "GitHub Copilot從按請求計費改為按使用量計費，Anthropic同步限制Claude Code Opus模型存取；AI編碼工具成本上升引發企業重新思考是否重新僱用人類工程師",
+        "impact": "懂得量化AI工具產值的工程師優勢加大；純粹依賴AI工具卻無法展示獨特價值的工程師面臨更大壓力"
+      },
+      {
+        "title": "NVIDIA NVLink Fusion發布，台灣半導體異質整合機會大開",
+        "summary": "NVIDIA於2026年6月推出NVLink Fusion半客製化解決方案，開放異質晶片整合；博通2024年AI相關營收破百億，佔比35%",
+        "impact": "台灣CoWoS、HBM、CPO/矽光子整合需求持續攀升；ASIC設計與先進封裝工程師薪資進一步上漲"
+      },
+      {
+        "title": "Spring Health 2026報告：AI焦慮成職場新型壓力源，影響近四成員工",
+        "summary": "24%員工感受資訊過載、23%失去未來掌控感、20%財務穩定擔憂加劇，19%工作壓力惡化；企業EAP系統轉型需求加速",
+        "impact": "職場心理健康顧問與EAP設計師需求增加；懂得協助組織應對AI轉型焦慮的人才成稀缺資源"
+      },
+      {
+        "title": "紐約/加州立法要求AI心理健康工具須具備自傷偵測協定",
+        "summary": "2026年兩州均要求AI陪伴工具營運商必須建立自傷偵測機制並揭露非人類身份，各平台需聘用具臨床背景的AI安全評估專才",
+        "impact": "AI心理健康領域的合規負擔增加，但同時創造出「AI心理工具安全評估師」的新職位，具心理師執照的AI安全人才極為稀缺"
+      },
+      {
+        "title": "全球AI相關裁員2026年前5月達87,714人，5月AI首度超越景氣成企業裁員主因",
+        "summary": "美國5月裁員近97,006人，AI相關38,579人佔40%；管理職扁平化持續，初階白領職位壓力加大；另一面前線部署職缺年增729%",
+        "impact": "高風險：文書型白領、傳統QA、中層管理；機會：AI落地工程師、LLMOps、AI合規、心理健康複合型人才"
+      }
+    ],
+    "sdlcAnalysis": [
+      {
+        "role": "Business Analyst",
+        "phase": "需求分析",
+        "survivalRating": 3,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "從文書BA轉型為AI產品策略師，聚焦商業判斷、垂直領域知識而非PRD文件產出",
+        "hotSkills": ["垂直領域知識", "AI需求設計", "商業決策分析"],
+        "salaryTrend": "下降10%",
+        "todayNews": "Spring Health 2026研究顯示AI焦慮已影響職場；BA若能成為組織「AI壓力緩衝顧問」結合需求分析角色，將大幅提升不可取代性"
+      },
+      {
+        "role": "Product Manager",
+        "phase": "產品規劃",
+        "survivalRating": 3,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "深耕垂直領域（醫療/金融/製造），成為AI輔助的不可取代領域PM",
+        "hotSkills": ["垂直領域知識", "AI產品策略", "數據驅動決策"],
+        "salaryTrend": "持平",
+        "todayNews": "Coinbase扁平化模式持續擴散，2026年多家科技公司宣布不再設純管理職，PM須兼具執行力與AI工具操作能力才能存活"
+      },
+      {
+        "role": "UX Researcher",
+        "phase": "使用者研究",
+        "survivalRating": 4,
+        "aiImpact": "medium",
+        "trend": "stable",
+        "transitionAdvice": "整合AI工具進研究流程，專精AI焦慮與AI接受度的人機互動研究",
+        "hotSkills": ["混合式研究方法", "AI焦慮研究", "人機互動設計"],
+        "salaryTrend": "上升5%",
+        "todayNews": "Spring Health AI焦慮研究報告引發市場對「AI使用者心理研究」需求大增，能研究人類如何與AI互動的UX Researcher成新稀缺人才"
+      },
+      {
+        "role": "System Architect",
+        "phase": "系統設計",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "擴展異質整合與多Agent協作架構設計能力，成為AI系統的首席架構顧問",
+        "hotSkills": ["LLM架構設計", "異質整合系統", "MCP協定設計"],
+        "salaryTrend": "上升20%",
+        "todayNews": "NVIDIA NVLink Fusion發布後異質晶片整合架構需求暴增，能設計LLM+RAG+Agent+硬體整合架構的System Architect薪資創新高"
+      },
+      {
+        "role": "UI/UX Designer",
+        "phase": "界面設計",
+        "survivalRating": 4,
+        "aiImpact": "medium",
+        "trend": "stable",
+        "transitionAdvice": "學習AI原生互動設計模式與危機偵測UX，專攻心理健康App等高監管數位產品",
+        "hotSkills": ["AI互動設計", "危機偵測UX", "對話式UI"],
+        "salaryTrend": "持平",
+        "todayNews": "紐約/加州立法要求AI心理工具具備自傷偵測機制，能設計兼顧安全性與使用者體驗的心理健康App UX設計師需求上升"
+      },
+      {
+        "role": "Frontend Engineer",
+        "phase": "前端開發",
+        "survivalRating": 3,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "學習LLM前端串接、Streaming UI與Web Components深度能力，展示AI工具量化產值",
+        "hotSkills": ["LLM前端串接", "Streaming UI", "AI工具ROI量化"],
+        "salaryTrend": "下降10%",
+        "todayNews": "GitHub Copilot 6月計費改制後，企業重新評估AI編碼工具ROI；純前端工程師需主動提案AI輔助效益報告，否則面臨裁員壓力"
+      },
+      {
+        "role": "Backend Engineer",
+        "phase": "後端開發",
+        "survivalRating": 4,
+        "aiImpact": "medium",
+        "trend": "stable",
+        "transitionAdvice": "深化LLM後端整合能力，成為RAG管線與Agent後端架構的核心支柱",
+        "hotSkills": ["LLM API整合", "向量資料庫", "Agent後端架構"],
+        "salaryTrend": "上升10%",
+        "todayNews": "MCP協定普及讓後端工程師需支援多模型Agent互通架構，能設計高效LLM後端管線的工程師薪資持續上漲"
+      },
+      {
+        "role": "DevOps/SRE",
+        "phase": "部署維運",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "擴展LLMOps與AI系統可靠性工程能力，成為AI落地最後一哩路的關鍵角色",
+        "hotSkills": ["MLOps/LLMOps", "Kubernetes", "AI成本監控"],
+        "salaryTrend": "上升20%",
+        "todayNews": "GitHub Copilot計費改制引發企業對AI工具成本管控重視；能建立LLM成本儀表板與流量路由優化機制的DevOps/SRE薪資加速上漲"
+      },
+      {
+        "role": "Security Engineer",
+        "phase": "安全防護",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "投資AI心理健康工具安全評估能力，結合LLM紅隊與合規框架成為AI治理關鍵人才",
+        "hotSkills": ["LLM Red Team", "AI心理安全合規", "AI治理框架"],
+        "salaryTrend": "上升20%",
+        "todayNews": "紐約/加州立法AI心理健康工具安全規範，台灣AI基本法持續落實，能做AI平台安全合規評估的資安工程師薪資持續攀升"
+      },
+      {
+        "role": "QA Engineer",
+        "phase": "品質測試",
+        "survivalRating": 2,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "立即轉型為AI品質工程師，掌握LLM評估框架設計與AI測試策略",
+        "hotSkills": ["AI測試框架", "RAGAS評估", "LLM品質驗證"],
+        "salaryTrend": "下降15%",
+        "todayNews": "GitHub Copilot計費改制後企業更嚴格評估AI工具品質，傳統QA人力持續縮減；但能設計LLM評估golden dataset的AI品質工程師需求激增"
+      },
+      {
+        "role": "Technical Writer",
+        "phase": "文件撰寫",
+        "survivalRating": 2,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "轉型為AI文件策略師或企業知識庫架構師，聚焦內容品質策略與AI生成審核",
+        "hotSkills": ["AI文件管線設計", "知識庫架構", "內容品質策略"],
+        "salaryTrend": "下降20%",
+        "todayNews": "AI自動生成技術文件品質持續提升，傳統Technical Writer職缺縮減；能設計知識庫架構並管理AI文件生成品質的策略師仍有需求"
+      },
+      {
+        "role": "Scrum Master",
+        "phase": "敏捷管理",
+        "survivalRating": 2,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "轉型為AI導入變革教練，協助組織管理AI轉型焦慮與能力建構",
+        "hotSkills": ["AI轉型教練", "組織AI焦慮管理", "變革管理"],
+        "salaryTrend": "下降15%",
+        "todayNews": "Spring Health 2026報告顯示組織AI焦慮嚴重，原本Scrum Master若能轉型為「AI變革教練」協助團隊適應AI工作流，將有全新存活空間"
+      },
+      {
+        "role": "AI Engineer",
+        "phase": "AI開發",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "專攻多模型Agent協作架構與LLMOps，成為AI系統全棧工程師",
+        "hotSkills": ["Multi-Agent架構", "LLMOps", "MCP協定", "評估框架"],
+        "salaryTrend": "上升30%",
+        "todayNews": "iKala研究指出2026年AI Agent 5大落地場景全面啟動；前線部署工程師職缺年增729%仍持續，Anthropic/OpenAI/Palantir積極搶人未停"
+      },
+      {
+        "role": "Prompt Engineer",
+        "phase": "AI應用設計",
+        "survivalRating": 4,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "進化為Context Engineer，設計精密的LLM上下文管理架構與Agentic工作流",
+        "hotSkills": ["上下文架構設計", "Agent工作流設計", "LLM安全提示"],
+        "salaryTrend": "上升25%",
+        "todayNews": "2026年「Context Engineer」新職稱出現，強調上下文視窗管理設計已成獨立職能；Prompt Engineer分化為AI Orchestrator與Context Designer兩大方向"
+      }
+    ],
+    "mentalHealthJobs": [
+      {
+        "title": "Digital Mental Health Designer",
+        "description": "設計AI輔助的數位心理健康產品，整合行為科學、危機偵測機制與UX打造安全有療效的數位體驗",
+        "requiredBackground": ["心理學/輔導背景", "UX/UI設計", "行為設計"],
+        "aiRole": "AI生成個人化介入內容、情緒追蹤回饋，設計師負責危機情境安全閥設計",
+        "salaryRange": "TWD 55K-92K/月",
+        "growthOutlook": "high",
+        "todayNews": "紐約/加州立法要求AI心理工具必須具備自傷偵測機制，能設計兼顧安全合規與使用體驗的設計師需求激增"
+      },
+      {
+        "title": "AI Therapy System Trainer",
+        "description": "使用心理健康專業知識訓練AI對話模型，確保AI在心理支持場景的安全性、文化適切性與有效性",
+        "requiredBackground": ["心理師/諮商師執照", "數據標註經驗", "AI倫理"],
+        "aiRole": "AI作為訓練對象，需要人類心理師持續監督、校正與邊界設定",
+        "salaryRange": "TWD 50K-88K/月",
+        "growthOutlook": "high",
+        "todayNews": "各平台面對AI無法可靠辨識心理危機的監管壓力，加速招募具心理師執照的AI訓練師；台灣AI諮商系統研發進入第二階段"
+      },
+      {
+        "title": "Mental Health Data Analyst",
+        "description": "分析EAP與心理健康服務數據，識別高風險族群，優化AI介入策略與服務效果評估",
+        "requiredBackground": ["統計/數據科學", "公衛/心理學背景", "Python/SQL"],
+        "aiRole": "AI自動化數據管線與預測模型，人類聚焦倫理判斷與洞察詮釋",
+        "salaryRange": "TWD 55K-92K/月",
+        "growthOutlook": "high",
+        "todayNews": "AllOne Health 2026 EAP年報發布，顯示AI輔助EAP利用率達10-40%遠超傳統3%，各平台急需數據分析師優化AI介入ROI量化"
+      },
+      {
+        "title": "Crisis Response AI Specialist",
+        "description": "設計並監督AI危機偵測系統，確保高風險心理情境的即時人工介入與安全閥機制",
+        "requiredBackground": ["危機介入訓練", "臨床心理背景", "AI系統評估"],
+        "aiRole": "AI即時監測與初步篩選，人類專家負責高風險案例最終決策與緊急介入",
+        "salaryRange": "TWD 62K-105K/月",
+        "growthOutlook": "high",
+        "todayNews": "紐約/加州2026年立法要求AI心理工具具備自傷偵測協定，具臨床背景的AI危機系統監督專才成全球最稀缺的心理×AI複合型人才"
+      },
+      {
+        "title": "Teletherapy Platform Manager",
+        "description": "管理遠距心理治療平台的AI功能整合、治療師媒合系統、安全合規與使用者體驗優化",
+        "requiredBackground": ["數位健康平台管理", "心理健康政策", "產品管理"],
+        "aiRole": "AI做治療師媒合、進度追蹤、個人化推薦與AI焦慮評估",
+        "salaryRange": "TWD 68K-115K/月",
+        "growthOutlook": "medium",
+        "todayNews": "AI-powered EAP市場持續擴張，Spring Health、BetterHelp等平台新增AI焦慮評估功能，亞太市場開始引進平台管理人才"
+      },
+      {
+        "title": "Workplace Mental Health Consultant",
+        "description": "協助企業設計AI輔助的職場心理健康計劃，提供AI焦慮管理策略與EAP導入諮詢",
+        "requiredBackground": ["職場心理健康", "EAP設計", "組織變革顧問"],
+        "aiRole": "AI分析員工健康數據與AI焦慮指標，顧問負責文化推動與策略設計",
+        "salaryRange": "TWD 65K-115K/月",
+        "growthOutlook": "high",
+        "todayNews": "Spring Health 2026研究確認AI焦慮是新型職場壓力源；AllOne Health年報顯示企業EAP投資ROI達1:2.3，職場心理健康顧問需求激增"
+      }
+    ]
+  },
+  {
     "date": "2026-06-12",
     "summary": {
       "hotIndustries": [
