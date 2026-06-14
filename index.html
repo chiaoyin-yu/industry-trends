@@ -130,6 +130,418 @@
 /* DATA_START */
 const REPORT_DATA = [
   {
+    "date": "2026-06-14",
+    "summary": {
+      "hotIndustries": [
+        "AI Agent/代理化服務",
+        "機器人×AI智慧製造",
+        "數位治療/心理健康科技",
+        "LLMOps/AI平台工程",
+        "AI安全合規/治理"
+      ],
+      "decliningIndustries": [
+        "傳統QA測試",
+        "白領中層管理職",
+        "初階樣板軟體工程師"
+      ],
+      "aiHighImpactCount": 5
+    },
+    "hotJobs": [
+      {
+        "rank": 1,
+        "title": "AI前線部署/落地工程師",
+        "industry": "AI硬體/資料中心",
+        "salaryRange": "TWD 62K-98K/月",
+        "keySkills": ["系統整合", "AI伺服器部署", "Linux", "硬體除錯"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 2,
+        "title": "LLMOps/AI評估工程師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 70K-120K/月",
+        "keySkills": ["LLMOps框架", "評估管線設計", "成本監控", "A/B測試"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 3,
+        "title": "AI Agent架構師",
+        "industry": "科技/AI",
+        "salaryRange": "TWD 80K-130K/月",
+        "keySkills": ["Multi-Agent設計", "MCP協定", "工作流自動化", "多模型協作"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 4,
+        "title": "IC設計工程師（ASIC/先進封裝）",
+        "industry": "半導體",
+        "salaryRange": "TWD 120K-180K/月",
+        "keySkills": ["EDA工具", "ASIC設計", "CoWoS整合", "異質封裝"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 5,
+        "title": "AI安全工程師（LLM Red Team）",
+        "industry": "科技/資安",
+        "salaryRange": "TWD 68K-120K/月",
+        "keySkills": ["LLM漏洞評估", "AI Red Team", "ISO 42001", "AI治理框架"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 6,
+        "title": "Digital Therapeutics Designer",
+        "industry": "數位心理健康科技",
+        "salaryRange": "TWD 58K-95K/月",
+        "keySkills": ["行為設計", "臨床心理知識", "AI互動設計", "DTx法規"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 7,
+        "title": "機器人×AI整合工程師",
+        "industry": "智慧製造/機器人",
+        "salaryRange": "TWD 75K-130K/月",
+        "keySkills": ["ROS", "AI視覺", "機電整合", "邊緣AI運算"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 8,
+        "title": "AI顧問/企業轉型策略師",
+        "industry": "顧問/企業服務",
+        "salaryRange": "TWD 90K-160K/月",
+        "keySkills": ["AI策略規劃", "ROI量化", "組織設計", "AI焦慮管理"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 9,
+        "title": "Workplace Mental Health Consultant",
+        "industry": "心理健康/EAP",
+        "salaryRange": "TWD 65K-115K/月",
+        "keySkills": ["EAP設計", "AI焦慮管理", "組織心理健康", "數位治療評估"],
+        "aiImpact": "low",
+        "trend": "up"
+      },
+      {
+        "rank": 10,
+        "title": "Platform/SRE工程師",
+        "industry": "科技/基礎設施",
+        "salaryRange": "TWD 55K-95K/月",
+        "keySkills": ["Kubernetes", "LLMOps", "可觀測性工程", "AI成本監控"],
+        "aiImpact": "low",
+        "trend": "up"
+      }
+    ],
+    "skillsAnalysis": [
+      {"skill": "Python/AI框架", "demand": 98, "category": "tech"},
+      {"skill": "LLM/Agent架構", "demand": 96, "category": "tech"},
+      {"skill": "ASIC/異質整合設計", "demand": 93, "category": "tech"},
+      {"skill": "LLMOps/評估框架", "demand": 91, "category": "tech"},
+      {"skill": "雲端平台(AWS/GCP)", "demand": 85, "category": "tech"},
+      {"skill": "AI安全合規/ISO 42001", "demand": 85, "category": "domain"},
+      {"skill": "機器人×AI整合", "demand": 83, "category": "tech"},
+      {"skill": "跨領域整合溝通", "demand": 82, "category": "soft"},
+      {"skill": "數位治療設計(DTx)", "demand": 78, "category": "domain"},
+      {"skill": "心理健康×AI設計", "demand": 76, "category": "domain"}
+    ],
+    "aiHighRisk": [
+      {
+        "job": "傳統QA測試工程師",
+        "reason": "Stanford AI Index 2026確認AI自動測試覆蓋率大幅提升；領英報告顯示QA職缺年縮減幅度居各技術職類之首，多家企業QA人力削減40-60%",
+        "suggestion": "立即掌握RAGAS、LLM評估框架與AI測試策略設計，建立Golden Dataset公開作品集是最快的差異化方式"
+      },
+      {
+        "job": "初階軟體工程師（CRUD/樣板開發）",
+        "reason": "GitHub Copilot付費訂閱470萬年增75%、46%程式碼由AI生成；Stanford AI Index確認22-25歲初階開發者就業率下降近20%",
+        "suggestion": "深化系統設計、AI架構整合與LLMOps技能；建立展示AI整合能力的開源作品集，強調「AI×領域知識」複合型能力"
+      },
+      {
+        "job": "白領中層管理職（Project Manager/Scrum Master）",
+        "reason": "扁平化組織持續擴散，多家科技公司消除純管理職；AI讓進度追蹤、資源排程、會議記錄完全自動化，2026年白領主管職裁員比例上升",
+        "suggestion": "從「管理者」轉型為「AI驅動的執行者兼導師」，能操作AI工具並輔導組織AI轉型焦慮管理；懂AI焦慮管理的管理者成稀缺人才"
+      },
+      {
+        "job": "傳統Business Analyst（文書輸出型）",
+        "reason": "AI自動生成PRD、會議記錄、流程圖已達可接受品質；領英數據顯示BA職缺年縮減15%，純文書型BA首當其衝",
+        "suggestion": "聚焦垂直領域深度知識（醫療、金融、製造）加上AI工具操作力；成為「AI產品策略師」而非文件生產者"
+      }
+    ],
+    "aiOpportunity": [
+      {
+        "job": "AI Agent架構師",
+        "reason": "AI Agent代理化是2026年最核心趨勢，iKala 5大落地場景全面啟動；能設計自主規劃、推理與執行複雜任務的Agent架構師成最緊缺人才，職缺激增70%"
+      },
+      {
+        "job": "Digital Therapeutics Designer",
+        "reason": "CMS已開始報銷FDA授權DTx方案，數位心理治療市場CAGR達32.2%；兼具心理背景與AI設計能力的DTx設計師幾乎是全球空白市場"
+      },
+      {
+        "job": "機器人×AI整合工程師",
+        "reason": "Deloitte 2026台灣報告點名機器人×AI為下一個產業升級機遇；台灣機電硬體優勢+AI大腦組合讓此職位在台灣製造業需求正在爆發初期"
+      },
+      {
+        "job": "LLMOps工程師",
+        "reason": "LLMOps工具市場2027年突破$20億；GitHub Copilot計費改制讓企業更重視AI成本管控，能建立LLM成本儀表板的工程師議價能力大幅提升"
+      },
+      {
+        "job": "Workplace Mental Health Consultant",
+        "reason": "Spring Health確認AI焦慮影響近四成員工；69%員工認為心理健康福利影響求職；企業EAP顧問需求量創歷年新高，ROI達1:2.3"
+      }
+    ],
+    "actionableAdvice": [
+      "「機器人×AI整合工程師」是台灣製造業的隱形金礦：Deloitte 2026報告點名台灣機械產業結合AI是下一個產業升級機遇，ROS+邊緣AI+機電整合能力組合極為稀缺，月薪75-130K且需求正處爆發初期",
+      "Stanford AI Index 2026確認初階白領加速受衝擊：22-25歲工程師就業率已降20%、40%勞工擔憂比2024增12%——現在轉型比等待衝擊更主動；最快的差異化路徑是「領域知識×AI工具操作力×作品集」三合一",
+      "數位治療（DTx）是最被低估的新藍海：CMS已開始報銷FDA授權DTx方案，數位心理治療市場CAGR 32.2%是整體數位健康市場的兩倍速——兼具心理背景的設計師現在進入幾乎無競爭",
+      "Platform Engineering正從DevOps/SRE分化出第三條路徑已成定論：Platform Engineer聚焦內部工具生態，SRE聚焦可靠性，DevOps聚焦流程自動化；三者薪資與技能樹已明確分化，愈早選定一路徑深化愈值錢",
+      "AI焦慮管理能力是2026下半年職場最搶手的跨域軟技能：Spring Health確認AI焦慮影響近四成員工、69%員工重視心理健康福利——懂結合AI工具使用與輔導AI焦慮的人，是組織最不想失去的「穩定錨」"
+    ],
+    "newsHighlights": [
+      {
+        "title": "Stanford AI Index 2026：AI相關職缺激增70%，中美模型差距縮至2.7%",
+        "summary": "領英2026全球勞動力市場報告顯示AI崗位激增70%；Stanford確認中美頂尖AI模型差距縮至2.7%，初階白領就業壓力持續加深，22-25歲工程師就業率降20%",
+        "impact": "AI工程類職位供不應求；初階行政、文書、基礎軟體工程競爭加劇，轉型愈早優勢愈大"
+      },
+      {
+        "title": "Deloitte：台灣機器人×AI整合是下一個產業升級機遇",
+        "summary": "Deloitte 2026台灣產業趨勢展望指出，台灣機械產業結合AI大腦讓傳統機構件升級是下一個產業升級契機；邊緣運算+機器人是2026年確定性未來趨勢",
+        "impact": "機器人AI整合工程師、智慧製造AI導入顧問、邊緣AI工程師需求在台灣製造業將快速增長"
+      },
+      {
+        "title": "CMS開始報銷FDA授權DTx，數位心理治療市場CAGR達32.2%",
+        "summary": "數位心理治療市場$2.4B→$3.17B（CAGR 32.2%），CMS於2025年1月啟動報銷機制大幅加速採用；AI+DTx融合正在創造全新職類",
+        "impact": "具心理師執照的DTx設計師、AI治療系統訓練師成全球最稀缺複合型人才；台灣心理系所畢業生進入AI領域有結構性優勢"
+      },
+      {
+        "title": "Platform Engineering vs SRE vs DevOps 三路分化成2026職涯新格局",
+        "summary": "2026年6月技術社群確認Platform Engineering已從DevOps/SRE正式分化；三者薪資、技能樹、職責邊界已明確區別，SRE年薪比DevOps高15-25%",
+        "impact": "SRE美國年薪$142K-$154K；台灣Platform Engineer職位持續增加，需Kubernetes+內部工具生態+開發者體驗設計能力"
+      },
+      {
+        "title": "16國調查：40%勞工擔憂被AI取代，較2024年上升12個百分點",
+        "summary": "CNA/中央社報導16國調查確認勞工AI焦慮創新高；同時AI已創造1.3M+新工作，但多數要求完全不同的技能組合",
+        "impact": "「AI焦慮管理」成企業HR最迫切需求；心理健康×AI複合型人才議價空間大幅提升"
+      }
+    ],
+    "sdlcAnalysis": [
+      {
+        "role": "Business Analyst",
+        "phase": "需求分析",
+        "survivalRating": 3,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "從文書BA轉型為AI產品策略師，聚焦商業判斷與垂直領域知識而非PRD文件產出",
+        "hotSkills": ["垂直領域知識", "AI需求設計", "商業決策分析"],
+        "salaryTrend": "下降10%",
+        "todayNews": "Stanford AI Index 2026確認AI自動生成PRD與流程圖品質持續提升，領英報告顯示BA職缺年縮減15%；能設計AI需求工作坊並翻譯業務需求為Agent架構的BA反而需求激增"
+      },
+      {
+        "role": "Product Manager",
+        "phase": "產品規劃",
+        "survivalRating": 3,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "深耕垂直領域（醫療/金融/製造），同時能親自操作AI工具並設計AI Agent業務落地場景",
+        "hotSkills": ["垂直領域知識", "AI Agent落地設計", "數據驅動決策"],
+        "salaryTrend": "持平",
+        "todayNews": "Deloitte 2026台灣報告顯示AI Agent代理化讓PM需具備更強技術洞察力；能設計AI Agent業務落地場景的PM成緊缺人才，純通才PM空間持續壓縮"
+      },
+      {
+        "role": "UX Researcher",
+        "phase": "使用者研究",
+        "survivalRating": 4,
+        "aiImpact": "medium",
+        "trend": "stable",
+        "transitionAdvice": "整合AI工具加速研究流程，專精「AI使用者心理研究」——研究人類如何與AI互動及AI焦慮行為",
+        "hotSkills": ["混合式研究方法", "AI焦慮研究", "人機互動設計"],
+        "salaryTrend": "上升5%",
+        "todayNews": "16國調查40%勞工擔憂AI，Spring Health AI焦慮研究發布——能研究AI焦慮使用者行為的UX Researcher成EAP平台與DTx公司急招對象"
+      },
+      {
+        "role": "System Architect",
+        "phase": "系統設計",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "擴展AI Agent多模型協作架構與機器人×AI整合設計能力，成為企業AI轉型首席架構顧問",
+        "hotSkills": ["LLM多Agent架構", "機器人×AI整合", "邊緣AI架構設計"],
+        "salaryTrend": "上升20%",
+        "todayNews": "Deloitte點名台灣機器人×AI整合是下一個產業升級機遇，能設計AI+機電整合架構的System Architect成台灣製造業最搶手人才"
+      },
+      {
+        "role": "UI/UX Designer",
+        "phase": "界面設計",
+        "survivalRating": 4,
+        "aiImpact": "medium",
+        "trend": "stable",
+        "transitionAdvice": "學習AI原生互動設計（對話式、Agent型）與數位治療UX，專攻高監管數位健康產品",
+        "hotSkills": ["AI互動設計", "DTx體驗設計", "對話式UI設計"],
+        "salaryTrend": "持平",
+        "todayNews": "DTx市場CAGR 32.2%，CMS開始報銷FDA授權DTx方案；能設計兼顧臨床效果與UX的DTx設計師成全球最急缺複合型人才，台灣競爭者幾乎為零"
+      },
+      {
+        "role": "Frontend Engineer",
+        "phase": "前端開發",
+        "survivalRating": 3,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "學習LLM前端整合、Streaming UI與即時AI互動體驗開發，主動量化AI工具ROI展示不可取代性",
+        "hotSkills": ["LLM前端串接", "Streaming UI", "即時AI互動體驗"],
+        "salaryTrend": "下降10%",
+        "todayNews": "GitHub Copilot付費訂閱470萬年增75%，46%程式碼由AI生成；純前端工程師需求持續下滑，能整合LLM功能的全端工程師反增"
+      },
+      {
+        "role": "Backend Engineer",
+        "phase": "後端開發",
+        "survivalRating": 4,
+        "aiImpact": "medium",
+        "trend": "stable",
+        "transitionAdvice": "深化RAG管線、向量資料庫整合與多Agent後端協作架構，成為AI應用後端核心",
+        "hotSkills": ["LLM API整合", "向量資料庫", "RAG管線設計"],
+        "salaryTrend": "上升10%",
+        "todayNews": "AI Agent複雜度增加讓後端需支援更多LLM整合；MCP協定普及後，能設計多Agent後端協作架構的工程師薪資持續上漲"
+      },
+      {
+        "role": "DevOps/SRE",
+        "phase": "部署維運",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "選定Platform Engineering、SRE或DevOps其中一路徑深化，三路分化已明確，早選早建立競爭壁壘",
+        "hotSkills": ["MLOps/LLMOps", "Platform Engineering", "AI成本監控"],
+        "salaryTrend": "上升20%",
+        "todayNews": "Platform Engineering vs SRE vs DevOps三路分化成2026職涯格局；SRE美國年薪$142K-$154K比DevOps高15-25%，台灣中階月薪50-70K持續上漲"
+      },
+      {
+        "role": "Security Engineer",
+        "phase": "安全防護",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "投資ISO 42001認證與LLM Red Team能力，成為企業AI治理框架的核心建構者",
+        "hotSkills": ["LLM Red Team", "ISO 42001認證", "AI治理框架"],
+        "salaryTrend": "上升20%",
+        "todayNews": "台灣AI基本法「國家AI戰略委員會」正式運作，分級管理高風險AI應用；能協助企業符合AI治理框架的資安工程師需求在2026下半年預計爆發"
+      },
+      {
+        "role": "QA Engineer",
+        "phase": "品質測試",
+        "survivalRating": 2,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "立即轉型為AI品質工程師，建立RAGAS評估與Golden Dataset設計公開作品集",
+        "hotSkills": ["AI測試框架", "RAGAS評估", "Golden Dataset設計"],
+        "salaryTrend": "下降15%",
+        "todayNews": "Stanford AI Index 2026確認AI自動測試覆蓋率大幅提升；企業QA人力削減40-60%，唯能設計LLM評估框架的AI品質工程師職缺逆勢激增"
+      },
+      {
+        "role": "Technical Writer",
+        "phase": "文件撰寫",
+        "survivalRating": 2,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "轉型為企業知識庫架構師，設計AI生成文件的品質策略與內容治理框架",
+        "hotSkills": ["知識庫架構設計", "AI文件品質策略", "內容治理框架"],
+        "salaryTrend": "下降20%",
+        "todayNews": "AI自動生成技術文件品質持續提升，傳統Technical Writer職缺快速縮減；能設計企業知識圖譜與AI文件生成品質管理系統者仍具稀缺需求"
+      },
+      {
+        "role": "Scrum Master",
+        "phase": "敏捷管理",
+        "survivalRating": 2,
+        "aiImpact": "high",
+        "trend": "down",
+        "transitionAdvice": "轉型為AI導入變革教練，協助組織管理AI轉型焦慮並建構AI應用能力",
+        "hotSkills": ["AI轉型教練", "AI焦慮管理輔導", "組織能力建構"],
+        "salaryTrend": "下降15%",
+        "todayNews": "16國調查40%勞工擔憂AI取代創歷史新高；Spring Health確認AI焦慮影響近四成員工——Scrum Master若能轉型為「AI轉型焦慮管理教練」將找到全新生存空間"
+      },
+      {
+        "role": "AI Engineer",
+        "phase": "AI開發",
+        "survivalRating": 5,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "專攻AI Agent多模型協作架構與邊緣AI部署，成為AI系統全棧工程師",
+        "hotSkills": ["Multi-Agent架構", "LLMOps", "邊緣AI部署", "評估框架"],
+        "salaryTrend": "上升30%",
+        "todayNews": "AI Agent代理化是2026年最核心趨勢，領英報告AI職缺激增70%；台灣AI相關職缺已達9.9萬個較去年+38%，AI Engineer薪資上漲幅度居各技術職類之首"
+      },
+      {
+        "role": "Prompt Engineer",
+        "phase": "AI應用設計",
+        "survivalRating": 4,
+        "aiImpact": "low",
+        "trend": "up",
+        "transitionAdvice": "進化為AI Orchestrator，設計複雜多模型協作工作流、企業級安全護欄與上下文架構",
+        "hotSkills": ["上下文架構設計", "Agent工作流編排", "LLM安全提示設計"],
+        "salaryTrend": "上升25%",
+        "todayNews": "2026年Prompt Engineer進化為AI Orchestrator角色，LLMOps工具市場2027年突破$20億；企業從實驗性Prompt轉向生產級Agent工作流，此職類薪資持續上漲"
+      }
+    ],
+    "mentalHealthJobs": [
+      {
+        "title": "Digital Mental Health Designer",
+        "description": "設計AI輔助的數位心理治療產品（DTx），整合行為科學、臨床指引與AI互動設計，打造兼具療效與安全合規的數位體驗",
+        "requiredBackground": ["心理學/諮商背景", "UX/UI設計", "DTx法規與FDA/CMS知識"],
+        "aiRole": "AI提供個人化治療內容推薦、情緒追蹤與CBT練習生成，設計師負責療效設計策略與安全閥機制",
+        "salaryRange": "TWD 58K-95K/月",
+        "growthOutlook": "high",
+        "todayNews": "CMS已開始報銷FDA授權DTx方案，數位心理治療市場CAGR達32.2%；能設計臨床有效且通過FDA審核的DTx設計師成全球最急缺複合型人才"
+      },
+      {
+        "title": "AI Therapy System Trainer",
+        "description": "運用心理健康專業知識訓練與校正AI對話模型，確保AI在心理支持場景中的安全性、文化適切性與臨床有效性",
+        "requiredBackground": ["心理師/諮商師執照", "RLHF/數據標註", "AI倫理與偏見校正"],
+        "aiRole": "AI作為被訓練對象，需人類心理師持續審核輸出、設定邊界並進行情境測試",
+        "salaryRange": "TWD 50K-90K/月",
+        "growthOutlook": "high",
+        "todayNews": "台灣「洋洋」AI虛擬療癒師持續發展，專家提醒AI諮詢5大盲點；各平台加速招募具心理師執照的AI訓練師，市場競爭者極少"
+      },
+      {
+        "title": "Mental Health Data Analyst",
+        "description": "分析EAP、數位治療與心理健康服務數據，識別高風險族群，量化AI介入ROI並優化服務效果評估",
+        "requiredBackground": ["統計/數據科學", "公衛/心理學背景", "Python/R/SQL"],
+        "aiRole": "AI自動化數據蒐集、異常偵測與預測模型建構，人類分析師聚焦倫理判斷、洞察詮釋與政策建議",
+        "salaryRange": "TWD 55K-95K/月",
+        "growthOutlook": "high",
+        "todayNews": "AllOne Health 2026 EAP年報顯示AI輔助EAP利用率達10-40%（傳統僅3%）；企業急需數據分析師量化AI介入ROI並優化成本效益分析"
+      },
+      {
+        "title": "Crisis Response AI Specialist",
+        "description": "設計、測試並監督AI危機偵測系統，建立高風險心理情境的即時人工介入協定與安全閥機制",
+        "requiredBackground": ["危機介入訓練(QMHP)", "臨床心理背景", "AI系統安全評估"],
+        "aiRole": "AI即時監測對話風險信號並分級預警，人類專家負責高風險案例最終判斷與緊急聯繫執行",
+        "salaryRange": "TWD 62K-108K/月",
+        "growthOutlook": "high",
+        "todayNews": "紐約/加州立法要求AI心理工具必須建立自傷偵測協定並揭露非人類身份；全球各AI心理平台競相招募具QMHP資格的AI危機安全評估專才"
+      },
+      {
+        "title": "Teletherapy Platform Manager",
+        "description": "管理遠距心理治療平台的AI功能整合、治療師媒合演算法、安全合規、使用者體驗與業務指標監控",
+        "requiredBackground": ["數位健康平台管理", "心理健康產業知識", "產品管理/數據分析"],
+        "aiRole": "AI負責治療師最佳媒合、療程進度追蹤、個人化課程推薦與早期風險偵測",
+        "salaryRange": "TWD 68K-118K/月",
+        "growthOutlook": "medium",
+        "todayNews": "全球數位心理健康市場2026年達$32.06B（CAGR 16.4%），AI-powered EAP在亞太市場快速擴張，台灣遠距諮商平台開始招聘具中文能力的平台管理人才"
+      },
+      {
+        "title": "Workplace Mental Health Consultant",
+        "description": "協助企業設計AI輔助的職場心理健康計劃，提供AI焦慮管理策略、EAP工具評估與組織心理安全文化建構",
+        "requiredBackground": ["職場心理健康", "EAP設計", "AI工具評估", "組織變革顧問"],
+        "aiRole": "AI分析員工健康數據、識別高風險部門並提供個人化EAP資源推薦，顧問負責文化推動與策略設計",
+        "salaryRange": "TWD 65K-115K/月",
+        "growthOutlook": "high",
+        "todayNews": "Spring Health 2026年報確認AI焦慮是職場新型壓力源（影響近四成員工）；69%員工認為心理健康福利影響求職決定，企業EAP顧問需求量創歷年新高"
+      }
+    ]
+  },
+  {
     "date": "2026-06-13",
     "summary": {
       "hotIndustries": [
